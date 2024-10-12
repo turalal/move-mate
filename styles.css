@@ -1,140 +1,111 @@
-/* General Styles */
-body, html {
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    scroll-behavior: smooth;
+    background-color: #f4f4f4;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1, h2, h3, p {
-    margin: 0 0 20px;
-}
-
-/* Navigation Styles */
-.navbar {
+header {
     background-color: #333;
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
 }
 
-.navbar .container {
+/* Top bar with USA flag */
+.top-bar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.usaflag {
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Logo and title */
+.logo-container {
+    text-align: center;
+    margin-top: 20px;
 }
 
 .logo {
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
+    width: 250px;
+    height: auto;
 }
 
-.menu {
+h1 {
+    font-size: 2.5em;
+    margin-top: 10px;
+}
+
+/* Navigation */
+nav {
+    background-color: #444;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    gap: 15px;
-}
-
-.menu a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.menu a:hover {
-    text-decoration: underline;
-}
-
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 5px 0;
-}
-
-/* Home Section Styles */
-#home {
-    height: 100vh;
-    background: url('home-bg.jpg') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
     color: #fff;
-}
-
-#home h1 {
-    font-size: 48px;
-}
-
-#home p {
-    font-size: 24px;
-    margin-bottom: 30px;
-}
-
-.btn {
-    background-color: #ff6b6b;
-    color: #fff;
-    padding: 10px 20px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
     border-radius: 5px;
 }
 
-.btn:hover {
-    background-color: #ff4d4d;
+/* Main content */
+main {
+    padding: 20px;
 }
 
-/* Section Styles */
-section {
-    padding: 60px 0;
-    background-color: #f5f5f5;
-}
-
-section:nth-child(even) {
-    background-color: #fff;
-}
-
-.service-item {
-    margin-bottom: 30px;
-}
-
-#contact form {
-    display: flex;
-    flex-direction: column;
-}
-
-#contact input, #contact textarea {
-    padding: 10px;
+h2 {
+    font-size: 2em;
+    color: #333;
+    text-align: center;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
-#contact .btn {
-    align-self: flex-start;
+section {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer Styles */
+ul {
+    list-style-type: disc;
+    padding-left: 40px;
+}
+
+/* Footer */
 footer {
+    text-align: center;
+    padding: 20px;
     background-color: #333;
     color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
+    margin-top: 20px;
 }
