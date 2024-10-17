@@ -3,56 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoveMate Registration</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Dil değiştirme
-            $('#language-selector').change(function() {
-                var selectedLanguage = $(this).val();
-                if (selectedLanguage === 'en') {
-                    $('#title').text('MoveMate Registration');
-                    $('#register-btn').text('Register');
-                    $('#email-label').text('Email');
-                    $('#password-label').text('Password');
-                } else if (selectedLanguage === 'az') {
-                    $('#title').text('MoveMate Qeydiyyat');
-                    $('#register-btn').text('Qeydiyyatdan keç');
-                    $('#email-label').text('E-poçt');
-                    $('#password-label').text('Şifrə');
-                } else if (selectedLanguage === 'tr') {
-                    $('#title').text('MoveMate Kayıt');
-                    $('#register-btn').text('Kayıt Ol');
-                    $('#email-label').text('E-posta');
-                    $('#password-label').text('Şifre');
-                }
-            });
-        });
-    </script>
+    <title>MoveMate.me - Relocation Services</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1 id="title">MoveMate Registration</h1>
-        <form action="register.php" method="POST">
-            <label for="email" id="email-label">Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter your email" required>
-            
-            <label for="password" id="password-label">Password</label>
-            <input type="password" name="password" id="password" placeholder="Enter your password" required>
-            
-            <button type="submit" id="register-btn">Register</button>
-        </form>
+    <header>
+        <img src="logo.png" alt="MoveMate Logo" style="width: 150px; height: auto;">
+        <h1>Welcome to MoveMate.me</h1>
+        <nav>
+            <ul>
+                <li><a href="#housing-assistance">Housing Assistance</a></li>
+                <li><a href="#family-services">Family Services</a></li>
+                <li><a href="#membership-plans">Membership Plans</a></li>
+                <li><a href="#support">Psychological and Social Support</a></li>
+                <li><a href="#interactive-features">Interactive Features</a></li>
+                <li><a href="#scalability">Scalability</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <!-- Dil seçici -->
-        <div class="language-selector">
-            <label for="language-selector">Select Language: </label>
-            <select id="language-selector">
-                <option value="en">English</option>
-                <option value="az">Azerbaijani</option>
-                <option value="tr">Turkish</option>
-            </select>
-        </div>
-    </div>
+    <main>
+        <section id="housing-assistance">
+            <h2>Housing Assistance</h2>
+            <ul>
+                <li>Apartment Search & Lease Signing: MoveMate will help immigrants find suitable housing, guiding them through the process of selecting apartments, handling the paperwork, and signing leases.
+</li>
+                <li>Reduced Deposits: For those using the Full Package, MoveMate will offer the option to secure housing with a small deposit included in the package, easing the financial burden. The tenant only needs to cover monthly rent and utilities (electricity, gas, water, internet).
+</li>
+                <li>Temporary Housing Options: If permanent housing is not immediately available, we will assist in securing temporary housing or rentals.
+</li>                
+            </ul>
+        </section>
+
+        <section id="family-services">
+            <h2>Family Services</h2>
+            <ul>
+                <li>School registration assistance for children in the USA.</li>
+                <li>Guidance on obtaining health insurance.</li>
+                <li>Organizing intellectual development programs for children (e.g., chess, coding, and art clubs).</li>
+            </ul>
+        </section>
+
+        <section id="membership-plans">
+            <h2>Membership Plans</h2>
+            <p>Users can choose from different service packages (basic and full) that cater to their specific needs, such as airport pickup, transportation, and housing assistance.</p>
+        </section>
+
+        <section id="support">
+            <h2>Psychological and Social Support</h2>
+            <p>Providing psychological services to help immigrants cope with the challenges of relocation.</p>
+        </section>
+
+        <section id="interactive-features">
+            <h2>Interactive Features</h2>
+            <ul>
+                <li>A seamless user experience with smooth navigation.</li>
+                <li>Forms for service registration, sticky navigation, and mobile-friendly design.</li>
+                <li>Options for real-time updates on services such as job placement and housing availability.</li>
+            </ul>
+        </section>
+
+        <section id="scalability">
+            <h2>Scalability</h2>
+            <p>While the website initially targets Azerbaijani and Turkish immigrants, it is designed to be scalable, offering services to a broader audience, including Latin American, African, Asian, and European immigrant communities.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MoveMate.me  All rights reserved.</p>
+        <img src="usaflag.png" alt="USA Flag" style="width: 50px; height: auto;">
+    </footer>
 </body>
 </html>
