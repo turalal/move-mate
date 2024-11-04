@@ -1,8 +1,8 @@
 
 /*** Color Variables for MoveMate ***/
 :root {
-    --bs-primary: #0D3352; /* Main color (dark blue) */
-    --bs-secondary: #520D0D; /* Secondary color (orange) */
+    --bs-primary: hsl(206, 86%, 44%); /* Main color (dark blue) */
+    --bs-secondary: hwb(0 7% 8%); /* Secondary color (orange) */
     --bs-light: #f4f4f4; /* Light background color */
     --bs-white: #ffffff; /* White color */
 }
