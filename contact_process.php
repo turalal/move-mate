@@ -34,14 +34,15 @@ $subject = "New Message from $name";
 $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
 $headers = "From: $email";
 
-// Check if the mail was sent
+// Mail funksiyasının işini yoxlayın
 if (mail($to, $subject, $body, $headers)) {
     // E-poçt göndərilibsə yönləndir
     header("Location: thank_you.html");
     ob_end_flush(); // Output buffering bitir
     exit();
 } else {
-    echo "There was a problem sending your message. Please try again.";
+    // Mail funksiyası uğursuz olarsa, debugging üçün mesaj verin
+    echo "There was an issue sending the email. Please check your server's email configuration.";
 }
 
 // Close the database connection
