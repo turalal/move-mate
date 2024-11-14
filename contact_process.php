@@ -1,39 +1,50 @@
 <?php
 // contact_process.php
 
-// Check if the form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    // Get the form fields and sanitize them
-    $name = htmlspecialchars(trim($_POST["name"]));
-    $email = htmlspecialchars(trim($_POST["email"]));
-    $message = htmlspecialchars(trim($_POST["message"]));
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-    // Recipient email address
-    $to = "sales@movemate.me";
+// Check if the form is submitted using POST
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    // Email subject
-    $subject = "New Contact Message from $name";
+    // Get form data with fallback for undefined values
+    $name = isset($_POST['name']) ? $_POST['name'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $message = isset($_POST['message']) ? $_POST['message'] : '';
 
-    // Email content
-    $email_content = "Name: $name\n";
-    $email_content .= "Email: $email\n\n";
-    $email_content .= "Message:\n$message\n";
+    // Debug: Log the incoming data to check if POST is working
+    echo "Name: " . htmlspecialchars($name) . "<br>";
+    echo "Email: " . htmlspecialchars($email) . "<br>";
+    echo "Message: " . htmlspecialchars($message) . "<br>";
 
-    // Email headers
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
+    // Validate required fields
+    if (!empty($name) && !empty($email) && !empty($message)) {
 
-    // Send the email
-    if (mail($to, $subject, $email_content, $headers)) {
-        // Redirect to thank you page on success
-        header("Location: thank_you.html");
-        exit();
+        // Define the recipient email address
+        $to = 'your-email@example.com'; // Replace this with your actual email
+        $subject = 'New Contact Message';
+        $body = "Name: $name\nEmail: $email\nMessage: $message";
+        $headers = "From: $email";
+
+        // Attempt to send the email
+        if (mail($to, $subject, $body, $headers)) {
+            // If email is sent, redirect to thank you page
+            header("Location: thank_you.html");
+            exit();
+        } else {
+            // Debug: Log error if mail function fails
+            echo "Error: Email could not be sent. Please check your email configuration.";
+        }
+
     } else {
-        echo "Sorry, something went wrong. Please try again later.";
+        // Debug: Output message if required fields are missing
+        echo "Error: Please fill in all required fields.";
     }
+
 } else {
-    // If the form is not submitted via POST, redirect back to contact page
+    // If not a POST request, redirect back to the contact form
     header("Location: contact.html");
     exit();
 }
+?>
