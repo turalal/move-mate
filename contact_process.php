@@ -14,9 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $message = isset($_POST['message']) ? $_POST['message'] : '';
 
     // Debug: Log the incoming data to check if POST is working
-    echo "Name: " . htmlspecialchars($name) . "<br>";
-    echo "Email: " . htmlspecialchars($email) . "<br>";
-    echo "Message: " . htmlspecialchars($message) . "<br>";
+    echo "Debug - Name: " . htmlspecialchars($name) . "<br>";
+    echo "Debug - Email: " . htmlspecialchars($email) . "<br>";
+    echo "Debug - Message: " . htmlspecialchars($message) . "<br>";
 
     // Validate required fields
     if (!empty($name) && !empty($email) && !empty($message)) {
@@ -29,6 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Attempt to send the email
         if (mail($to, $subject, $body, $headers)) {
+            // Debug: Confirmation that mail() succeeded
+            echo "Debug - Email sent successfully.<br>";
+
             // If email is sent, redirect to thank you page
             header("Location: thank_you.html");
             exit();
@@ -43,6 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 } else {
+    // Debug: Indicate non-POST request received
+    echo "Debug - Not a POST request.";
+    
     // If not a POST request, redirect back to the contact form
     header("Location: contact.html");
     exit();
